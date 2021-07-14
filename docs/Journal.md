@@ -25,4 +25,16 @@ Questions/decisions:
 
 Basic app setup.  github project, prettier, cypress, react app boilerplate, node.
 
+~1h
+-- Submitted to David.
+
+## 2020-07-13
+
+Basic react component layout, installed font(s).
+First Cypress test to ensure app comes up with the barest of essentials.
+
 1h
+
+## 2020-07-14
+
+Added <head> meta stuff (mainly for title) using `react-helmet`

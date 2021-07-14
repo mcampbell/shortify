@@ -1,0 +1,9 @@
+.brandIcons {
+    color: hsl(220, 100%, 54%);
+}
+
+#brand-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 5rem;
+}

@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+// https://dev.to/annequinkenstein/adding-fonts-to-create-react-app-3ed7
+import './fonts/NHaasGroteskTXPro-55Rg.ttf';
+import './fonts/NHaasGroteskTXPro-65Md.ttf';
+import './fonts/NHaasGroteskTXPro-75Bd.ttf';
+
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -10,8 +15,3 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
