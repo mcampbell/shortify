@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from '../../images/logo-blue.png'
 import styles from './Header.module.css';
 
 Header.propTypes = {};
@@ -21,6 +22,19 @@ function Header(props) {
                     <li><FontAwesomeIcon icon={'envelope'}/>&nbsp;<a href={"mailto:sales@stord.com"}>sales@stord.com</a></li>
                 </ul>
             </nav>
+            <div className={styles.banner}>
+                <ul className={styles.bannerList}>
+                    <li><img src={logo} /></li>
+                    <li><a href={"https://www.stord.com/cloud-software-platform"}>Software</a></li>
+                    <li><a href={"https://www.stord.com/warehousing"}>Logistics</a></li>
+                    <li><a href={"https://www.stord.com/network-design"}>Solutions</a></li>
+                    <li><a href={"https://www.stord.com/business-benefits-enterprise"}>Why Stord?</a></li>
+                    <li><a href={"https://www.stord.com/about-us"}>About Us</a></li>
+                    <li><a href={"https://www.stord.com/get-started"}><button className={styles.expertButton}>Talk to an expert</button></a></li>
+                    <li><a href={"https://admin.stord.com"}>Login</a></li>
+                </ul>
+
+            </div>
         </>
     );
 }

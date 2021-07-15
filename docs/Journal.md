@@ -38,3 +38,17 @@ First Cypress test to ensure app comes up with the barest of essentials.
 ## 2020-07-14
 
 Added <head> meta stuff (mainly for title) using `react-helmet`
+
+Got footer fontawesome icons working
+Got top-bar links, phone, email etc. on-screen and closely matching production site.
+
+2h
+
+## 2020-07-15
+
+Implemented the main Stord logo banner section
+- links (I just chose a link from each dropdown to go to; stretch goal to get at least one of the actual dropdowns implemented.)
+- Button, dropshadow, login
+- favicon
+
+-- submitted to David.
