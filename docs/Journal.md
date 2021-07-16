@@ -52,3 +52,9 @@ Implemented the main Stord logo banner section
 - favicon
 
 -- submitted to David.
+
+## 2020-07-16
+
+Footer area.
+- log, list of lists; layout and visual styling
+- copyright area; layout and visual styling

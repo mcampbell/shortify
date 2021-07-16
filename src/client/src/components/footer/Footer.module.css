@@ -1,9 +1,77 @@
+#footer {
+    background-color: hsl(210, 14%, 90%);
+}
+
 .brandIcons {
     color: hsl(220, 100%, 54%);
 }
 
-#brand-bar {
+#brandBar {
     display: flex;
     justify-content: space-between;
     width: 5rem;
+    margin-left: 1.5rem;
+}
+
+#footerContent {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 1.5rem;
+}
+
+#footerContent div:last-of-type {
+    margin-left: auto;
+    margin-right: 1.5rem;
+}
+
+#footerInfos {
+    display: flex;
+}
+
+#footerInfos ul {
+    list-style: none;
+    gap: 0;
+}
+
+#footerInfos ul li {
+    text-align: left;
+    font-size: 85%;
+    line-height: 2;
+}
+
+#footerInfos ul li:first-of-type {
+    text-align: left;
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+#footerInfos ul li:first-of-type::after {
+    content:"";
+    display: block;
+    width: 3rem;
+    padding-top: 0.25rem;
+    background-color: hsl(223, 100%, 54%);
+}
+
+#copy {
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    font-size: smaller;
+    text-align: left;
+    color: hsl(209, 12%, 47%);
+}
+
+#copy a {
+    text-decoration: underline;
+    color: hsl(209, 12%, 47%);
+}
+
+#copy > div {
+    display: flex;
+    gap: 2rem;
+}
+
+#copy a:visited {
+    color: hsl(209, 12%, 47%);
 }
