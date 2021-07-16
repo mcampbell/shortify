@@ -11,7 +11,7 @@ function Footer(props) {
         <div id={styles['footer']}>
             <div id={styles['footerContent']}>
 
-                <div>
+                <div id={styles['footerLogo']}>
                     <img src={logo} alt={'Stord logo'}/>
                 </div>
                 <div id={styles['footerInfos']}>

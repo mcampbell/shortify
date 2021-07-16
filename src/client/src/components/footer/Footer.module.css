@@ -24,6 +24,10 @@
     margin-right: 1.5rem;
 }
 
+#footerLogo {
+    margin-top: 2rem;
+}
+
 #footerInfos {
     display: flex;
 }
@@ -31,12 +35,13 @@
 #footerInfos ul {
     list-style: none;
     gap: 0;
+    padding: 0 0 0 1rem;
 }
 
 #footerInfos ul li {
     text-align: left;
     font-size: 85%;
-    line-height: 2;
+    line-height: 2.5;
 }
 
 #footerInfos ul li:first-of-type {
