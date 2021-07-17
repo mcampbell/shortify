@@ -1,0 +1,44 @@
+main {
+    margin: 4rem 1.5rem
+}
+
+#pitch {
+    display: flex;
+    flex-grow: 1;
+    gap: 1rem;
+}
+#pitch div:first-of-type {
+    width: 80%;
+    font-size: larger;
+}
+#pitch div:last-of-type {
+    align-content: flex-start;
+}
+
+
+#shorten {
+    margin-top: 2rem;
+    display: flex;
+    flex-grow: 1;
+    gap: 1rem;
+}
+
+#shorten button {
+    height: 2rem;
+    color: white;
+    font-weight: bold;
+    background-color: hsl(220, 100%, 54%);
+    box-shadow: 4px 4px 0 black;
+    border-radius: 8px;
+}
+
+#shorten button:active {
+    background-color: hsl(220, 100%, 80%);
+    box-shadow: 4px 4px lightgrey;
+}
+
+
+
+#shorten input {
+    width: 75%;
+}

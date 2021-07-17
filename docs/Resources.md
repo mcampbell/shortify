@@ -1,6 +1,9 @@
 # Resources used
 
-## Misc
+A curated list of resources I leaned on to complete the assignment.  This is to give the
+reviewer some idea of what I knew coming in to the project vs. what I learned as I went.
+
+## Inspiration, overall L&F, images/content
 - https://stord.com
 
 ## Fonts
@@ -13,3 +16,8 @@
 ## Misc CSS tricks
 - https://www.youtube.com/watch?v=Azfj1efPAH0
 - https://sharkcoder.com/visual/underline for shortened fixed-size heading underlines in footer
+- https://www.tutorialspoint.com/Add-a-pressed-effect-on-button-click-with-CSS - button press
+
+
+## URL validation
+- https://datatracker.ietf.org/doc/html/rfc1738

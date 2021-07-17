@@ -54,7 +54,19 @@ Implemented the main Stord logo banner section
 -- submitted to David.
 
 ## 2020-07-16
+Worked on...
 
 Footer area.
 - log, list of lists; layout and visual styling
 - copyright area; layout and visual styling
+
+
+## 2020-07-17
+Worked on...
+
+Content area
+- sample text and image layout/style from Stord.com site
+- input, button layout/style
+- api client "service" beginnings
+
+updated test(s) for >'hello world' level

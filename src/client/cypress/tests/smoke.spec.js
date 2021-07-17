@@ -1,8 +1,17 @@
-describe('basic app running functionality', function () {
-    it('comes up ok', function () {
+describe('page renders', function () {
+    it('renders the main sections', function () {
         cy.visit('/');
-        cy.contains('Header');
-        cy.contains('Content');
-        cy.contains('Footer');
+
+        // header stuff
+        cy.get('[data-test=login-button]');
+
+        // content area
+        cy.contains('Say goodbye');
+        cy.get('[data-test=url-shorten-button]');
+        cy.get('[data-test=url-shorten-input]');
+
+        // footer area
+        cy.get('[data-test=footer-tcs]');
+        cy.contains('wholly owned subsidiary');
     });
 });

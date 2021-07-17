@@ -31,7 +31,7 @@ function Header(props) {
                     <li><a href={"https://www.stord.com/business-benefits-enterprise"}>Why Stord?</a></li>
                     <li><a href={"https://www.stord.com/about-us"}>About Us</a></li>
                     <li><a href={"https://www.stord.com/get-started"}><button className={styles.expertButton}>Talk to an expert</button></a></li>
-                    <li><a href={"https://admin.stord.com"}>Login</a></li>
+                    <li><a href={"https://admin.stord.com"} data-test={"login-button"}>Login</a></li>
                 </ul>
 
             </div>

@@ -80,7 +80,7 @@ function Footer(props) {
                 <div>
                     <span>Copyright &copy; 2021 STORD, Inc. All rights reserved.</span>
                     <span><a href={''}>Privacy Policy</a></span>
-                    <span><a href={''}>Terms and Conditions</a></span><br/>
+                    <span><a href={''} data-test={"footer-tcs"}>Terms and Conditions</a></span><br/>
                 </div>
                 Freight services are offered by STORD Freight LLC, a wholly owned subsidiary of STORD inc, a freight
                 broker licensed under MC-747274-B

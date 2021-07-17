@@ -52,6 +52,10 @@ nav {
     background-color: hsl(220, 100%, 54%);
     box-shadow: 6px 6px 0 black;
 }
+.expertButton:active {
+    background-color: hsl(220, 100%, 80%);
+    box-shadow: 4px 4px lightgrey;
+}
 
 /* BANNER */
 
