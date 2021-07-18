@@ -16,8 +16,15 @@ reviewer some idea of what I knew coming in to the project vs. what I learned as
 ## Misc CSS tricks
 - https://www.youtube.com/watch?v=Azfj1efPAH0
 - https://sharkcoder.com/visual/underline for shortened fixed-size heading underlines in footer
-- https://www.tutorialspoint.com/Add-a-pressed-effect-on-button-click-with-CSS - button press
-
+- https://www.tutorialspoint.com/Add-a-pressed-effect-on-button-click-with-CSS - button press effect
 
 ## URL validation
 - https://datatracker.ietf.org/doc/html/rfc1738
+
+## Express/Typescript setup
+- https://blog.logrocket.com/typescript-with-node-js-and-express/
+
+
+## Typeorm
+- https://orkhan.gitbook.io/typeorm
+- https://typeorm.io

@@ -11,6 +11,14 @@ const http = axios.create({
 
 /**
  * Shorten the URL.
+ *
+ * Note to reviewer: I want this to be RESTy, but it's so very much a "command" type action; I'm kind of
+ * struggling what the right URI should be; what's the 'resource', and what action are we doing to/on
+ * it?
+ *
+ * In my current position I have one of these api.service.js files devoted specifically to non-REST
+ * endpoints, though they are few.
+ *
  * @param url.  Required.
  * @return {Promise<{data, status: string}|{error, status: string}>}
  */
@@ -24,4 +32,4 @@ export async function shortenURL(url) {
     } catch (error) {
         return { status: 'error', error };
     }
-};
+}

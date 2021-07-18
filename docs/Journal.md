@@ -1,13 +1,13 @@
 # Coding Exercise Journal
 
-## 2020-07-09
+## 2021-07-09
 
 Was given the exercise today, so read it over and began to think about approaches, what to do, what to omit, etc.
 Basically just mull over it, get a mental feel for how I want to approach things.
 
 1.5h
 
-## 2020-07-10
+## 2021-07-10
 
 Took a look at some prior art; the Stord site, tinyurl, bit.ly, a few others.  Started a quick Balsamiq sketch using the popular overall view/layout of such a site.
 
@@ -21,21 +21,21 @@ Questions/decisions:
 
 1.5h
 
-## 2020-07-12
+## 2021-07-12
 
 Basic app setup.  github project, prettier, cypress, react app boilerplate, node.
 
 ~1h
 -- Submitted to David.
 
-## 2020-07-13
+## 2021-07-13
 
 Basic react component layout, installed font(s).
 First Cypress test to ensure app comes up with the barest of essentials.
 
 1h
 
-## 2020-07-14
+## 2021-07-14
 
 Added <head> meta stuff (mainly for title) using `react-helmet`
 
@@ -44,7 +44,7 @@ Got top-bar links, phone, email etc. on-screen and closely matching production s
 
 2h
 
-## 2020-07-15
+## 2021-07-15
 
 Implemented the main Stord logo banner section
 - links (I just chose a link from each dropdown to go to; stretch goal to get at least one of the actual dropdowns implemented.)
@@ -53,7 +53,7 @@ Implemented the main Stord logo banner section
 
 -- submitted to David.
 
-## 2020-07-16
+## 2021-07-16
 Worked on...
 
 Footer area.
@@ -61,7 +61,7 @@ Footer area.
 - copyright area; layout and visual styling
 
 
-## 2020-07-17
+## 2021-07-17
 Worked on...
 
 Content area
@@ -70,3 +70,11 @@ Content area
 - api client "service" beginnings
 
 updated test(s) for >'hello world' level
+
+## 2021-07-18
+Worked on...
+
+Node server.
+- express setup, with typescript
+- typeorm setup, with sqlite3 for db (easiest; may move to PG depending on time)
+- start of api/service code

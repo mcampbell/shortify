@@ -4,12 +4,40 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:unit": "rimraf ./build && tsc && jest",
+    "test:cypress": "cypress run",
+    "start": "nodemon src/index.ts",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "cypress": "cypress open"
   },
   "author": "michael.campbell@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^14.17.5",
+    "@types/rewire": "^2.5.28",
     "cypress": "^7.7.0",
-    "nodemon": "^2.0.12"
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "rewire": "^5.0.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "express": "^4.17.1",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.34"
+  },
+  "jest": {
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      ".spec.[ts]x?"
+    ]
   }
 }
