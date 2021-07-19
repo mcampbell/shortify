@@ -78,3 +78,5 @@ Node server.
 - express setup, with typescript
 - typeorm setup, with sqlite3 for db (easiest; may move to PG depending on time)
 - start of api/service code
+- Cypress api testing
+- Jest unit testing

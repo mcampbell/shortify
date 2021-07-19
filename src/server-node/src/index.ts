@@ -22,6 +22,7 @@ createConnection(options);
  */
 
 app.use('/health', require('./api/health'));
+app.use('/shorten', require('./api/shorten.api'));
 
 
 /**

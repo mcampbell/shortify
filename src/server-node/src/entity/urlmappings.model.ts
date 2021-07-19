@@ -9,6 +9,11 @@ import {
 
 @Entity()
 export class URLMappings {
+    constructor(url: string, shortened: string) {
+        this.url = url;
+        this.shortened = shortened;
+    }
+
     @PrimaryGeneratedColumn()
     id!: number;
 

@@ -24,7 +24,9 @@ reviewer some idea of what I knew coming in to the project vs. what I learned as
 ## Express/Typescript setup
 - https://blog.logrocket.com/typescript-with-node-js-and-express/
 
-
 ## Typeorm
 - https://orkhan.gitbook.io/typeorm
 - https://typeorm.io
+
+## Jest stuff
+- https://www.samanthaming.com/journal/2-testing-non-exported-functions/
