@@ -80,3 +80,20 @@ Node server.
 - start of api/service code
 - Cypress api testing
 - Jest unit testing
+
+-- Submitted to David
+
+## 2021-07-20, 21
+Worked on...
+
+More unit testing.
+- making jest and cypress play together
+- making jest work on TS code
+
+## 2021-07-22
+Worked on...
+
+- Hooking up client to server to shorten (working)
+- "mode switch" on UI from shorten to copy-to-clipboard appropriately
+- copy-to-clipboard (working)
+- redirect code on server (working)

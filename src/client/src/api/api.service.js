@@ -6,7 +6,7 @@
 import axios from 'axios';
 
 const http = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'http://localhost:5001'
 });
 
 /**
@@ -28,7 +28,12 @@ export async function shortenURL(url) {
             throw new Error('Missing required `url` parameter.');
         }
         const res = await http.post(`/shorten`, { url });
-        return { status: 'success', data: res.data.url };
+        if (res?.data?.data?.status === 'ok') {
+            return { status: 'success', data: res.data.data.result };
+        } else {
+            return { status: 'error', error: res.data.data.result };
+        }
+
     } catch (error) {
         return { status: 'error', error };
     }

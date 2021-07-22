@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:unit": "rimraf ./build && tsc && jest",
+    "test:unit": "rimraf ./build && tsc && jest --config ./jest.config.js",
     "test:cypress": "cypress run",
     "start": "nodemon src/index.ts",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
@@ -27,17 +27,11 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "crypto-js": "^4.0.0",
     "express": "^4.17.1",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.0.2",
     "typeorm": "^0.2.34"
-  },
-  "jest": {
-    "verbose": true,
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      ".spec.[ts]x?"
-    ]
   }
 }

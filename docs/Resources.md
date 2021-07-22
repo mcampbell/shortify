@@ -30,3 +30,8 @@ reviewer some idea of what I knew coming in to the project vs. what I learned as
 
 ## Jest stuff
 - https://www.samanthaming.com/journal/2-testing-non-exported-functions/
+- https://codewithhugo.com/jest-mock-spy-module-import/
+
+## Clipboard manipulation
+- https://paulund.co.uk/javascript-copy-and-paste
+- https://github.com/nkbt/react-copy-to-clipboard

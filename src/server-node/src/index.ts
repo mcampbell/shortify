@@ -2,6 +2,7 @@ import { SqliteConnectionOptions } from 'typeorm/driver/sqlite/SqliteConnectionO
 import { createConnection } from 'typeorm';
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 /**
@@ -17,12 +18,16 @@ const options: SqliteConnectionOptions = {
 };
 createConnection(options);
 
+app.use(cors());
+app.use(express.json());
+
 /**
  * Routes
  */
 
-app.use('/health', require('./api/health'));
+app.use('/health', require('./api/health.api'));
 app.use('/shorten', require('./api/shorten.api'));
+app.use('/', require('./api/redirect.api'))
 
 
 /**

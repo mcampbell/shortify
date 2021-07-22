@@ -15,7 +15,6 @@ main {
     align-content: flex-start;
 }
 
-
 #shorten {
     margin-top: 2rem;
     display: flex;
@@ -23,7 +22,11 @@ main {
     gap: 1rem;
 }
 
-#shorten button {
+#shorten input {
+    width: 75%;
+}
+
+.buttonEnabled {
     height: 2rem;
     color: white;
     font-weight: bold;
@@ -32,13 +35,20 @@ main {
     border-radius: 8px;
 }
 
-#shorten button:active {
+.buttonEnabled:active {
     background-color: hsl(220, 100%, 80%);
     box-shadow: 4px 4px lightgrey;
 }
 
+.buttonDisabled {
+    height: 2rem;
+    color: hsl(0, 0%, 40%);
+    font-weight: bold;
+    background-color: hsl(220, 100%, 80%);
+    box-shadow: 4px 4px 0 black;
+    border-radius: 8px;
+}
 
-
-#shorten input {
-    width: 75%;
+.info {
+    font-size: smaller;
 }
