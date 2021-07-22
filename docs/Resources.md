@@ -35,3 +35,6 @@ reviewer some idea of what I knew coming in to the project vs. what I learned as
 ## Clipboard manipulation
 - https://paulund.co.uk/javascript-copy-and-paste
 - https://github.com/nkbt/react-copy-to-clipboard
+
+## Misc Javascript
+- https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp

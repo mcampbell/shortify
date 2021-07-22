@@ -12,8 +12,10 @@ function Content(props) {
     const [urlApiState, setUrlApiState] = useState('none');
     const [urlApiError, setUrlApiError] = useState();
 
+    // Toggle mode based on what they are doing.
     const [shortenMode, setShortenMode] = useState(true);
 
+    // Info for the user on various events
     const [shortenMessages, setShortenMessages] = useState(' ')
     // endregion
 
@@ -71,9 +73,28 @@ function Content(props) {
 
     // endregion
 
-    const updateUrl = (event) => {
+    const handleInputChange = (event) => {
+        // If we are in "copy" mode, and they are changing the URL manually via paste or typing, toggle to
+        // "shorten" mode so the button is in the right state
+        if (!shortenMode) {
+            setShortenMode(true);
+            setShortenMessages('');
+        }
         setUrl(event.target.value);
     };
+
+    // Add the button press behavior on the input for convenience since this isn't a <form>
+    const handleKeyUp = (event) => {
+        console.log('event', event, 'key', event.key);
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            const button = document.getElementById('button');
+            if (button && !button.disabled) {
+                button.click();
+            }
+        }
+    };
+
 
     function isUrlValid() {
         try {
@@ -108,14 +129,17 @@ function Content(props) {
                     placeholder={'Paste or type your URL'}
                     value={url}
                     width={'80%'}
-                    onChange={updateUrl}
+                    onChange={handleInputChange}
+                    onKeyUp={handleKeyUp}
                     data-test={'url-shorten-input'}
+                    id={'shortenInput'}
                 />
 
                 {shortenMode ? (
                     <button
                         data-test={'url-shorten-button'}
                         disabled={!buttonEnabled}
+                        id={'button'}
                         className={
                             buttonEnabled
                                 ? styles.buttonEnabled
@@ -127,6 +151,7 @@ function Content(props) {
                 ) : (
                     <button
                         data-test={'url-copy-button'}
+                        id={'button'}
                         className={styles.buttonEnabled}
                         onClick={copyToClipboard}>
                         Copy to clipboard

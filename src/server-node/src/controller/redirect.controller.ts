@@ -14,6 +14,8 @@ export async function redirect(req: any, res: any, next: any) {
     // If it doesn't, tell the user.
     const input: string = String(req.originalUrl)
 
+    // The / character is a valid character in the shortened input, but we remove the first one (but only the first!)
+    // here since it comes along for the ride as req.originalUrl.
     const shortened = input.startsWith('/') ? input.substring(1) : input;
     const lookup: Result = await expanden(shortened);
     if (lookup.status === 'ok') {

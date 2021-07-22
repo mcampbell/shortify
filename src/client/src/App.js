@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 // layout
@@ -17,6 +16,7 @@ library.add(fab, fas);
 function App() {
     return (
         <div className="App">
+            <div className={'headerContent'}/>
             <Header/>
             <Content/>
             <Footer/>

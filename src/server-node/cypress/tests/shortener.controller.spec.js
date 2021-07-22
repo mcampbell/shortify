@@ -27,7 +27,7 @@ describe('shortener controller tests', function () {
             .its('body.data.reason')
             .should(
                 'equal',
-                'url google.com appears to not be a valid url (Invalid URL)'
+                'url google.com appears to not be a valid url.  Reason: Invalid URL'
             );
     });
 
@@ -43,6 +43,9 @@ describe('shortener controller tests', function () {
         cy.get('@query').its('status').should('equal', 200);
         cy.get('@query')
             .its('body')
-            .should('deep.equal', { status: 'success', data: 'aaaaaa' });
+            .should('deep.equal', {
+                status: 'success',
+                data: { status: 'ok', result: 'aaaaaa' },
+            });
     });
 });
