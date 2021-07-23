@@ -1,12 +1,13 @@
 import * as service from '../service/shortener.service';
+import { NextFunction, Request, Response } from 'express';
 
-export async function shorten(req: any, resp: any, next: any) {
+export async function shorten(req: Request, res: Response, next: NextFunction) {
     const body = req.body;
     if (!body?.url) {
-        resp.status(400).send({
+        res.status(400).send({
             errors: [
                 {
-                    status: "400",
+                    status: '400',
                     detail: 'missing required body parameter `url`',
                 },
             ],
@@ -20,26 +21,21 @@ export async function shorten(req: any, resp: any, next: any) {
     const url = body.url;
     try {
         new URL(url);
-    } catch (err) {
-        resp.status(422).send({
-            errors: [
-                {
-                    status: "422",
-                    detail: `URL [${url}] cannot be shortened. Reason: ${err.message}`,
-                },
-            ],
-        });
-    }
-
-    try {
         const shortened: string = await service.shorten(body.url);
-        resp.status(200).send({
+        res.status(200).send({
             data: {
                 type: 'short',
                 value: shortened,
             },
         });
     } catch (err) {
-        next(err);
+        res.status(422).send({
+            errors: [
+                {
+                    status: '422',
+                    detail: `URL [${url}] cannot be shortened. Reason: ${err.message}`,
+                },
+            ],
+        });
     }
 }

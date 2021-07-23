@@ -6,7 +6,10 @@
 import axios from 'axios';
 
 const http = axios.create({
-    baseURL: 'http://localhost:5001'
+    baseURL: 'http://localhost:5001',
+    headers: {
+        "Authentication": "Bearer JWTGOESHERE"
+    }
 });
 
 /**
@@ -20,7 +23,6 @@ const http = axios.create({
  * endpoints, though they are few.
  *
  * @param url.  Required.
- * @return {Promise<{data, status: string}|{error, status: string}>}
  */
 export async function shortenURL(url) {
     try {
@@ -28,13 +30,16 @@ export async function shortenURL(url) {
             throw new Error('Missing required `url` parameter.');
         }
         const res = await http.post(`/shorten`, { url });
-        if (res?.data?.data?.status === 'ok') {
-            return { status: 'success', data: res.data.data.result };
-        } else {
-            return { status: 'error', error: res.data.data.result };
-        }
+        return res.data;
 
     } catch (error) {
-        return { status: 'error', error };
+        return {
+            errors: [
+                {
+                    status: '500',
+                    detail: `unknown error: ${JSON.stringify(error)}`
+                }
+            ]
+        };
     }
 }

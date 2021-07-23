@@ -1,5 +1,6 @@
 import { expanden } from '../service/shortener.service';
 import { EntityNotFoundError } from 'typeorm';
+import { NextFunction, Request, Response } from 'express';
 
 /**
  * Redirect to the found url if there is one, or an error explaining the issue if not.
@@ -8,7 +9,7 @@ import { EntityNotFoundError } from 'typeorm';
  * @param res
  * @param next
  */
-export async function redirect(req: any, res: any, next: any) {
+export async function redirect(req: Request, res: Response, next: NextFunction) {
     // Get the interesting bit from the URI, which should be a shortened "normal" uri, look it up and redirect
     // if it exists.
 
@@ -28,9 +29,9 @@ export async function redirect(req: any, res: any, next: any) {
                 errors: [
                     {
                         status: '404',
-                        detail: `No expansion of ${shortened} can be found.`
-                    }
-                ]
+                        detail: `No expansion of ${shortened} can be found.`,
+                    },
+                ],
             });
         } else {
             next(e);

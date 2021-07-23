@@ -35,6 +35,7 @@ reviewer some idea of what I knew coming in to the project vs. what I learned as
 ## Clipboard manipulation
 - https://paulund.co.uk/javascript-copy-and-paste
 - https://github.com/nkbt/react-copy-to-clipboard
+- https://stackoverflow.com/questions/61650737/how-to-fetch-copied-to-clipboard-content-in-cypress  (testing)
 
 ## Misc Javascript
 - https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp

@@ -6,6 +6,9 @@ describe('shortener controller tests', function () {
             log: true,
             url: `/shorten`,
             method: 'POST',
+            headers: {
+                'Authentication': 'Bearer JWTGOESHERE',
+            },
             failOnStatusCode: false,
         }).as('query');
 
@@ -28,6 +31,9 @@ describe('shortener controller tests', function () {
             url: `/shorten`,
             body: { url: 'google.com' },
             method: 'POST',
+            headers: {
+                'Authentication': 'Bearer JWTGOESHERE',
+            },
             failOnStatusCode: false,
         }).as('query');
 
@@ -50,6 +56,9 @@ describe('shortener controller tests', function () {
             url: `/shorten`,
             body: { url: 'https://stord.com' },
             method: 'POST',
+            headers: {
+                'Authentication': 'Bearer JWTGOESHERE',
+            },
             failOnStatusCode: false,
         }).as('query');
 
@@ -62,5 +71,34 @@ describe('shortener controller tests', function () {
                     value: 'aaaaaa',
                 },
             });
+    });
+
+    it('fails to authenticate without the right header', function () {
+        cy.request({
+            log: true,
+            url: `/shorten`,
+            body: { url: 'https://stord.com' },
+            method: 'POST',
+            failOnStatusCode: false,
+        }).as('query');
+
+        cy.get('@query').its('status').should('equal', 401);
+        cy.get('@query').its('body').should('not.exist');
+    });
+
+    it('fails to authenticate with the right header but bad value', function () {
+        cy.request({
+            log: true,
+            url: `/shorten`,
+            body: { url: 'https://stord.com' },
+            method: 'POST',
+            headers: {
+                'Authentication': 'Bearer JWTGOESHERE?',
+            },
+            failOnStatusCode: false,
+        }).as('query');
+
+        cy.get('@query').its('status').should('equal', 401);
+        cy.get('@query').its('body').should('not.exist');
     });
 });

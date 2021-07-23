@@ -18,7 +18,6 @@ export async function shorten(url: string): Promise<string> {
     // place.
     const found: URLMappings | undefined = await repository.getByUrl(url);
 
-
     if (found) {
         return found.shortened;
     } else {
@@ -79,4 +78,3 @@ function hashAndEncode(candidate: string, size: number = DEFAULT_SIZE): string {
 
     return encoded.substring(0, size > 0 ? size : DEFAULT_SIZE);
 }
-

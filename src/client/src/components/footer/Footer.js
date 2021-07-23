@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './Footer.module.css';
 import logo from '../../images/logo-blue.png';
 
-Footer.propTypes = {};
 
-function Footer(props) {
+function Footer() {
     return (
         <div id={styles['footer']}>
             <div id={styles['footerContent']}>
@@ -79,8 +77,8 @@ function Footer(props) {
             <div id={styles['copy']}>
                 <div>
                     <span>Copyright &copy; 2021 STORD, Inc. All rights reserved.</span>
-                    <span><a href={''}>Privacy Policy</a></span>
-                    <span><a href={''} data-test={"footer-tcs"}>Terms and Conditions</a></span><br/>
+                    <span><a href={'https://www.stord.com/privacy-policy'}>Privacy Policy</a></span>
+                    <span><a href={'https://www.stord.com/terms-and-conditions'} data-test={"footer-tcs"}>Terms and Conditions</a></span><br/>
                 </div>
                 Freight services are offered by STORD Freight LLC, a wholly owned subsidiary of STORD inc, a freight
                 broker licensed under MC-747274-B

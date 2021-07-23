@@ -24,7 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test:cypress": "cypress run",
-    "eject": "react-scripts eject"
+    "cypress": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "clipboardy": "^2.3.0",
     "cypress": "^8.0.0",
     "prettier": "^2.3.2",
     "serve": "^12.0.0"

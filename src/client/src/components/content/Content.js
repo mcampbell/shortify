@@ -4,19 +4,15 @@ import navplatform from '../../images/nav-platform.svg';
 import { shortenURL } from '../../api/api.service';
 import copy from 'copy-to-clipboard';
 
-Content.propTypes = {};
-
-function Content(props) {
+function Content() {
     // region State
     const [url, setUrl] = useState('');
-    const [urlApiState, setUrlApiState] = useState('none');
-    const [urlApiError, setUrlApiError] = useState();
 
     // Toggle mode based on what they are doing.
     const [shortenMode, setShortenMode] = useState(true);
 
     // Info for the user on various events
-    const [shortenMessages, setShortenMessages] = useState(' ')
+    const [shortenMessages, setShortenMessages] = useState(' ');
     // endregion
 
     // region API and other "processy" code
@@ -29,49 +25,44 @@ function Content(props) {
             debug: true,
             format: 'text/plain',
         });
+        setUrl('');
         setShortenMode(true);
         setShortenMessages('Copied.');
-        setUrl('')
         setTimeout(() => {
             setShortenMessages(' ');
         }, 2000);
     }
 
     async function apiShorten() {
-        setUrlApiState('loading');
-        setUrlApiError(null);
+        setShortenMessages('Shortening...');
         const response = await shortenURL(url);
-        console.log('response', response)
-        switch (response?.status) {
-            case 'success':
-                setUrl(`http://localhost:5001/${response.data}`);
-                setUrlApiState('success');
-                setShortenMode(false);
-                setShortenMessages("Success!  You may now click the button to copy the shortened URL to the clipboard, or use your Operating System's normal copy/cut keys.")
-                break;
-
-            default:
-                // error case and every other non-success case is the same.
-                let error = '';
-                switch (response?.error?.response?.status) {
-                    case 401: // unauth-n.
-                        error = 'Unauthenticated user.';
-                        break;
-                    case 403: // unauth-z
-                        error = 'Unauthorized to perform this action.';
-                        break;
-                    default:
-                        error = `Unknown error retrieving url.`;
-                        break;
-                }
-                // setUrl('');  // don't reset url on an error; that's just irritating.
-                setUrlApiState('error');
-                setUrlApiError(error);
-                break;
+        if (response?.data) {
+            setUrl(`http://localhost:5001/${response.data.value}`);
+            setShortenMode(false);
+            setShortenMessages('Success!  You may now click the button to copy the shortened URL to the clipboard, or use your Operating System\'s normal copy/cut keys.');
+        } else if (response?.errors) {
+            const error = response.errors[0];
+            let errorMessage;
+            switch (error.status) {
+                case '401': // unauth-n.
+                    errorMessage = 'Unauthenticated.';
+                    break;
+                case '500':
+                    errorMessage = 'Unknown server error.';
+                    break;
+                default:
+                    errorMessage = 'Unknown error retrieving url.';
+                    break;
+            }
+            // setUrl('');  // don't reset url on an error; that's just irritating.
+            setShortenMessages(errorMessage);
+        } else {
+            // I don't know how this might happen, but <shrug>
+            setShortenMessages(`Unknown error trying to shorten URL. =(`);
+            setShortenMode(true);
         }
-    }
 
-    // endregion
+    }
 
     const handleInputChange = (event) => {
         // If we are in "copy" mode, and they are changing the URL manually via paste or typing, toggle to
@@ -85,7 +76,6 @@ function Content(props) {
 
     // Add the button press behavior on the input for convenience since this isn't a <form>
     const handleKeyUp = (event) => {
-        console.log('event', event, 'key', event.key);
         if (event.key === 'Enter') {
             event.preventDefault();
             const button = document.getElementById('button');
@@ -94,6 +84,8 @@ function Content(props) {
             }
         }
     };
+
+    // endregion
 
 
     function isUrlValid() {
@@ -120,7 +112,7 @@ function Content(props) {
                     to the Cloud Supply Chain.
                 </div>
                 <div>
-                    <img src={navplatform} />
+                    <img src={navplatform} alt={'Stord Platform'}/>
                 </div>
             </div>
             <div id={styles['shorten']}>
@@ -158,7 +150,7 @@ function Content(props) {
                     </button>
                 )}
             </div>
-            <div className={styles.info}>{shortenMessages}</div>
+            <div id={'infoMessage'} className={styles.info}>{shortenMessages}</div>
         </main>
     );
     // endregion
