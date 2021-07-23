@@ -101,5 +101,21 @@ describe('basic app functionality', function () {
         cy.get('[data-test=url-shorten-input]')
     });
 
+    it('handles an unauthenticated response with a message', function () {
+        cy.intercept(
+            {
+                method: 'POST', url: '**/shorten'
+            },
+            {
+                statusCode: 401,
+            }).as('api');
+
+        cy.visit('/');
+        cy.get('[data-test=url-shorten-input]').type('https://stord.com');
+        cy.get('[data-test=url-shorten-button]').click();
+        cy.wait('@api');
+        cy.contains('Unauthenticated');
+    });
+
 
 });

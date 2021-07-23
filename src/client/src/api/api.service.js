@@ -33,13 +33,24 @@ export async function shortenURL(url) {
         return res.data;
 
     } catch (error) {
-        return {
-            errors: [
-                {
-                    status: '500',
-                    detail: `unknown error: ${JSON.stringify(error)}`
-                }
-            ]
-        };
+        if (error.response.status === 401) {
+            return {
+                errors: [
+                    {
+                        status: '401',
+                        detail: `Unauthenticated`
+                    }
+                ]
+            };
+        } else {
+            return {
+                errors: [
+                    {
+                        status: '500',
+                        detail: `unknown error: ${JSON.stringify(error)}`
+                    }
+                ]
+            };
+        }
     }
 }
