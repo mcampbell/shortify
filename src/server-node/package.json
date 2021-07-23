@@ -17,7 +17,7 @@
     "@types/jest": "^26.0.24",
     "@types/node": "^14.17.5",
     "@types/rewire": "^2.5.28",
-    "cypress": "^7.7.0",
+    "cypress": "^8.0.0",
     "jest": "^27.0.6",
     "nodemon": "^2.0.12",
     "rewire": "^5.0.0",

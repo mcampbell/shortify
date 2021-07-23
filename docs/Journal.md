@@ -97,3 +97,7 @@ Worked on...
 - "mode switch" on UI from shorten to copy-to-clipboard appropriately
 - copy-to-clipboard (working)
 - redirect code on server (working)
+- got non-form button working with <Enter>
+
+## 2021-07-23
+- JSON-API'd, tests

@@ -10,6 +10,16 @@ describe('shortener controller tests', function () {
         }).as('query');
 
         cy.get('@query').its('status').should('equal', 400);
+        cy.get('@query')
+            .its('body')
+            .should('deep.equal', {
+                errors: [
+                    {
+                        detail: 'missing required body parameter `url`',
+                        status: "400",
+                    },
+                ],
+            });
     });
 
     it('returns an error on a bad url', function () {
@@ -22,13 +32,16 @@ describe('shortener controller tests', function () {
         }).as('query');
 
         cy.get('@query').its('status').should('equal', 422);
-        cy.get('@query').its('body.status').should('equal', 'error');
         cy.get('@query')
-            .its('body.data.reason')
-            .should(
-                'equal',
-                'url google.com appears to not be a valid url.  Reason: Invalid URL'
-            );
+            .its('body')
+            .should('deep.equal', {
+                errors: [
+                    {
+                        status: "422",
+                        detail: 'URL [google.com] cannot be shortened. Reason: Invalid URL',
+                    },
+                ],
+            });
     });
 
     it('returns no error on a good url', function () {
@@ -44,8 +57,10 @@ describe('shortener controller tests', function () {
         cy.get('@query')
             .its('body')
             .should('deep.equal', {
-                status: 'success',
-                data: { status: 'ok', result: 'aaaaaa' },
+                data: {
+                    type: 'short',
+                    value: 'aaaaaa',
+                },
             });
     });
 });

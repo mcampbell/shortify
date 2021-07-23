@@ -1,20 +1,16 @@
 import { URLMappings } from '../entity/urlmappings.model';
 import { createHash } from 'crypto';
 import * as repository from '../repository/URLMappings';
+import { EntityNotFoundError } from 'typeorm';
 
 const DEFAULT_SIZE = 7;
-
-export interface Result {
-    status: 'ok' | 'error',
-    result: string
-}
 
 /**
  * Return a shortened mapping from a url.  If it already exists just return it, otherwise
  * create a new one and return it for future use.
  * @param url
  */
-export async function shorten(url: string): Promise<Result> {
+export async function shorten(url: string): Promise<string> {
     // For the sake of consistency, we'll leave case alone. Also, trailing "/" matters, sometimes, but we don't have
     // a hard requirement to return the same shortening for the LOGICALLY same URL's, so we won't mess with them.
     // In other words, if https://foo.com/ and HTTPS://Foo.Com are sent, they'll get different shortenings, but
@@ -22,27 +18,24 @@ export async function shorten(url: string): Promise<Result> {
     // place.
     const found: URLMappings | undefined = await repository.getByUrl(url);
 
-    try {
-        if (found) {
-            return { status: 'ok', result: found.shortened };
-        } else {
-            return { status: 'ok', result: await createNewShortening(url) };
-        }
-    } catch (e) {
-        return { status: 'error', result: e.message };
+
+    if (found) {
+        return found.shortened;
+    } else {
+        return createNewShortening(url);
     }
 }
 
 /**
  * Lookup the original URL based on the shortened one.  If it's not there, indicate that too.
  */
-export async function expanden(shortened: string): Promise<Result> {
+export async function expanden(shortened: string): Promise<string> {
     const found: URLMappings | undefined = await repository.getByShortened(shortened);
 
     if (found) {
-        return { status: 'ok', result: found.url };
+        return found.url;
     } else {
-        return { status: 'error', result: 'not found' };
+        throw new EntityNotFoundError(URLMappings, shortened);
     }
 }
 

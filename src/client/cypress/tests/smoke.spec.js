@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('page renders', function () {
     it('renders the main sections', function () {
         cy.visit('/');
