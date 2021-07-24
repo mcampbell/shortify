@@ -297,3 +297,5 @@ fabric.properties
 /.idea/
 /src/client/cypress/videos/
 /src/server-node/cypress/videos/
+/src/server-node/build/
+src/server-node/db/*.db

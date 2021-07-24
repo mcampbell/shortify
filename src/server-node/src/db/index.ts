@@ -11,7 +11,7 @@ export async function initializeDB() {
         type: 'sqlite',
         database: './db/shortify.db',
         entities: ['./src/entity/**/*.model.ts'],
-        synchronize: false,
+        synchronize: true,
         logging: 'all',
     };
     await createConnection(options);
