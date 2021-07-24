@@ -40,8 +40,7 @@ function cleanup() {
     rm -rf "$LOCK" 2>/dev/null
     SCRIPT_TOOK=$(( $(date +%s) - SCRIPT_STARTED ))
     log Ending.  Runtime: $(date -u -d @${SCRIPT_TOOK} +"%T")
-    /bin/echo -n ${THREADS}.0 $ITERATIONS \* $SCRIPT_TOOK / p | dc
-    echo ' ' requests per second.
+    echo $(echo 2 k ${THREADS}.0 $ITERATIONS \* ${SCRIPT_TOOK}.0 / p | dc) calls per second.
 }
 
 trap cleanup EXIT

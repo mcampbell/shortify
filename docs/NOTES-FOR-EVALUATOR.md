@@ -33,6 +33,17 @@ Security... I implemented a basic authentication assertion, and check, in the cl
 server respectively.  It is in no way secure, but I wanted to show (and commented some) on
 how such a thing MIGHT be done with a more robust auth provider.
 
+## Performance
+
+I wrote a crude python and shell load tester in `load-test`.  The README in the directory
+has more detail but each python instance will just hammer the server with requests
+serially and collect the response code (hoping for 302's).
+
+Running shortify-server and client in `docker-compose` mode on my Macbook, I get between 2
+and 3 calls per second, when running 1 "client".  With 5 clients, it goes to 17-19.  With
+10, over 46.  So, it scales pretty well, it's just not horribly fast on a per transaction
+basis.  I was able to serve over 100/s with 20 simultaneous clients.
+
 
 ## Things I Wanted To Do, but Didn't
 
