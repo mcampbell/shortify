@@ -18,7 +18,7 @@ These tests DO require the server be running.
 
 After code installation:
 - Start the server: `npm run start`
-- Run: `npm run test:cypress`
+- Run: `npm run test:cypress` (this may require a different terminal)
   - This runs the test in "invisible" headless mode.  You may also run `npm run cypress`
     for the Cypress UI and run manually.  These are using Cypress' ability to make network
     calls and is testing the API, so there isn't much to see.
@@ -44,7 +44,7 @@ These tests DO NOT require the *SERVER* be running.  They do require the *CLIENT
 After code installation:
 - Go to the client directory: `cd src/client`
 - Run: `npm run start` (if not already running)
-- Run: `npm run test:unit`
+- Run: `npm run test:unit` (this may require a different terminal)
 
 ### Integration Tests
 

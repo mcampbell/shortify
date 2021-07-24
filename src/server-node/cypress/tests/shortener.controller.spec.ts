@@ -38,16 +38,16 @@ describe('shortener controller tests', function () {
         }).as('query');
 
         cy.get('@query').its('status').should('equal', 422);
+
+        // for #reasons? the detail message on Windows is different, but it begins the same way.
+        // Due to a different version of npm causing a different version of JS or that has a different
+        // version of URL() in it?
         cy.get('@query')
-            .its('body')
-            .should('deep.equal', {
-                errors: [
-                    {
-                        status: "422",
-                        detail: 'URL [google.com] cannot be shortened. Reason: Invalid URL',
-                    },
-                ],
-            });
+            .its('body').its('errors').its(0).its('status')
+            .should('equal', '422');
+        cy.get('@query')
+            .its('body').its('errors').its(0).its('detail')
+            .should('contain', 'URL [google.com] cannot be shortened. Reason: Invalid URL');
     });
 
     it('returns no error on a good url', function () {
