@@ -299,3 +299,4 @@ fabric.properties
 /src/server-node/cypress/videos/
 /src/server-node/build/
 src/server-node/db/*.db
+/src/volumes/

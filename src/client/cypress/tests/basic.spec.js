@@ -58,7 +58,7 @@ describe('basic app functionality', function () {
         cy.contains('Unknown server error.');
     });
 
-    it('can copy the data to the clipboard', function () {
+    it('can copy the data to the clipboard with a click', function () {
         cy.intercept(
             {
                 method: 'POST', url: '**/shorten'
@@ -80,6 +80,28 @@ describe('basic app functionality', function () {
             .invoke('val')
             .should('equal', '');
         cy.task('getClipboard').should('equal', 'http://localhost:5001/aaaaaa');
+    });
+
+    it('does not copy the data to the clipboard with enter', function () {
+        cy.intercept(
+            {
+                method: 'POST', url: '**/shorten'
+            },
+            {
+                statusCode: 200,
+                body: '{"data":{"type":"short","value":"aaaaaa"}}'
+            }).as('api');
+
+        cy.visit('/');
+        cy.get('[data-test=url-shorten-input]').type('https://stord.com');
+        cy.get('[data-test=url-shorten-button]').click();
+        cy.wait('@api');
+        cy.get('[data-test=url-shorten-input]').type('{enter}');
+        cy.get('[data-test=url-shorten-input]')
+            .invoke('val')
+            .should('equal', 'http://localhost:5001/aaaaaa');
+        cy.contains("Success");  // If the copy went through, this would have changed to "Copied"
+
     });
 
     it('transitions to "shorten" mode after copying', function () {

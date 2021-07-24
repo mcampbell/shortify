@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-docker build -t shortify-server:dev .
-
-mkdir -p /tmp/shortify/db
 docker run -it --rm \
        -d \
        --name shortify-server \

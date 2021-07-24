@@ -25,8 +25,8 @@ function Content() {
             debug: true,
             format: 'text/plain',
         });
-        setUrl('');
         setShortenMode(true);
+        setUrl('');
         setShortenMessages('Copied.');
         setTimeout(() => {
             setShortenMessages(' ');
@@ -39,7 +39,9 @@ function Content() {
         if (response?.data) {
             setUrl(`http://localhost:5001/${response.data.value}`);
             setShortenMode(false);
-            setShortenMessages('Success!  You may now click the button to copy the shortened URL to the clipboard, or use your Operating System\'s normal copy/cut keys.');
+            setShortenMessages(
+                'Success!  You may now click the button to copy the shortened URL to the clipboard, or use your Operating System\'s normal copy/cut keys.'
+            );
         } else if (response?.errors) {
             const error = response.errors[0];
             let errorMessage;
@@ -61,7 +63,6 @@ function Content() {
             setShortenMessages(`Unknown error trying to shorten URL. =(`);
             setShortenMode(true);
         }
-
     }
 
     const handleInputChange = (event) => {
@@ -76,7 +77,10 @@ function Content() {
 
     // Add the button press behavior on the input for convenience since this isn't a <form>
     const handleKeyUp = (event) => {
-        if (event.key === 'Enter') {
+        // For some reason this doesn't work in FF, so only allow the enter trick during
+        // "shorten" mode.  Could never figure this out.
+
+        if (shortenMode && event.key === 'Enter') {
             event.preventDefault();
             const button = document.getElementById('button');
             if (button && !button.disabled) {
@@ -86,7 +90,6 @@ function Content() {
     };
 
     // endregion
-
 
     function isUrlValid() {
         try {
@@ -150,7 +153,9 @@ function Content() {
                     </button>
                 )}
             </div>
-            <div id={'infoMessage'} className={styles.info}>{shortenMessages}</div>
+            <div id={'infoMessage'} className={styles.info}>
+                {shortenMessages}
+            </div>
         </main>
     );
     // endregion
