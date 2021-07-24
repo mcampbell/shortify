@@ -19,13 +19,13 @@ reviewer some idea of what I knew coming in to the project vs. what I learned as
 - https://www.tutorialspoint.com/Add-a-pressed-effect-on-button-click-with-CSS - button press effect
 
 ## URL validation
-- https://datatracker.ietf.org/doc/html/rfc1738
+- https://datatracker.ietf.org/doc/html/rfc1738  Ended up using the native javascript URL constructor.
 
-## Express/Typescript setup
+## Express setup using Typescript
 - https://blog.logrocket.com/typescript-with-node-js-and-express/
 
 ## Typeorm
-- https://orkhan.gitbook.io/typeorm
+- https://orkhan.gitbook.io/typeorm - Misc reminders of details
 - https://typeorm.io
 
 ## Jest stuff
