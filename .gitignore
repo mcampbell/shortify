@@ -300,3 +300,4 @@ fabric.properties
 /src/server-node/build/
 src/server-node/db/*.db
 /src/volumes/
+/src/server-node/cypress/screenshots/
