@@ -5,7 +5,7 @@ For your convenience I have tried to provide a number of ways to run the app.
 ## `docker-compose`
 These instructions were tested with `docker-compose` version 1.29.2
 
-- Install the code (see: src/INSTALL.md), then...
+- Install the code (see: INSTALL.md), then...
 - `docker-compose up` (optionally, add `-d` for daemon/background mode)
 
 Note that this will create a local volume mount in `./src/volumes/db` to hold the database
@@ -16,7 +16,7 @@ To shut down, run `docker-compose down` if in daemon/background mode, or Ctrl-c 
 ## `docker`
 These instructions were tested with `docker` version 20.10.7.
 
-- Install the code (see: src/INSTALL.md), then...
+- Install the code (see: INSTALL.md), then...
 
 ### server
 - `cd src/server-node`
@@ -54,11 +54,20 @@ docker run -it --rm \
 
 To shut down, run `docker stop shortify-client`
 
+## Cleaning Up
+To clean up any docker remnants, run `./src/bin/cleanup-docker.sh`.  This will:
+- stop the `shortify` server and client
+- remove the `shortify` server and client containers
+- remove the `shortify` built images
+
+It will *not* remove the volume mount in `src/volumes`, however.  This can be safely
+`rm`'d with the code at your leisure.
+
 
 ## `npm`
 These instructions were tested with `npm` version 7.18.1.
 
-Install the code (see src/INSTALL.md), then...
+Install the code (see INSTALL.md), then...
 
 ### server
 - open a new terminal
