@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/node,webstorm,emacs,elixir
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,webstorm,emacs,elixir
 
@@ -296,8 +295,11 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/node,webstorm,emacs,elixir
 /.idea/
 /src/client/cypress/videos/
-/src/server-node/cypress/videos/
+/src/client/cypress/screenshots/
 /src/server-node/build/
-src/server-node/db/*.db
-/src/volumes/
 /src/server-node/cypress/screenshots/
+/src/server-node/cypress/videos/
+/src/server-node/volumes/
+/src/volumes/
+shortify.db
+venv/
