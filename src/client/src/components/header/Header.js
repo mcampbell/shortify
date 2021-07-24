@@ -15,7 +15,7 @@ function Header() {
             <nav>
                 <ul className={styles.navList}>
                     <li>
-                        New Blog: Announcing Stord's $65M Series C!
+                        New Blog: Announcing Stord's $65M Series C!&nbsp;
                         <a
                             href={
                                 'https://www.stord.com/blog/series-c-65m-cloud-supply-chain'

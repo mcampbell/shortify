@@ -2,14 +2,47 @@
     background-color: hsl(210, 14%, 90%);
 }
 
-.brandIcons {
+#footer a:link, #footer a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+#footer a:hover {
     color: hsl(220, 100%, 54%);
+}
+
+.icons {
+    color: white;
+    margin: 5px;
+}
+
+.contactIcons {
+    color: hsl(220, 100%, 54%);
+    margin-right: 0.5rem
+}
+
+.iconContainer {
+    background-color: hsl(220, 100%, 54%);
+    width: 26px;
+    height: 25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#addressContainer {
+    display: flex;
+    flex-direction: row;
+}
+#addressContainer > div {
+    line-height: 1.1;
 }
 
 #brandBar {
     display: flex;
     justify-content: space-between;
-    width: 5rem;
+    gap: 1rem;
+    width: 201px; /* same as the logo */
     margin-left: 1.5rem;
 }
 

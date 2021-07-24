@@ -22,3 +22,41 @@ After code installation:
   - This runs the test in "invisible" headless mode.  You may also run `npm run cypress`
     for the Cypress UI and run manually.  These are using Cypress' ability to make network
     calls and is testing the API, so there isn't much to see.
+
+Callout for Linux/Ubuntu.  I ran into the following issues testing on Ubuntu 18.04.
+- Error when running: `[nodemon] Internal watch failed: ENOSPC: System limit for number of
+  file watchers reached...`
+  - Fixed by following the advice [here](https://stackoverflow.com/a/34664097/296853).
+
+- Cypress needs `Xvfb` installed.  Fixed by running `sudo apt install xvfb`
+
+
+## client
+
+In the client code, all the tests are run with Cypress.  Like the server, these are the
+headless/invisible tests, but you may run `npm run cypress` (or `npx cypress open`) to get
+the Cypress UI and run whichever sets of tests "manually".
+
+### Unit Tests
+
+These tests DO NOT require the *SERVER* be running.  They do require the *CLIENT* to be running.
+
+After code installation:
+- Go to the client directory: `cd src/client`
+- Run: `npm run start` (if not already running)
+- Run: `npm run test:unit`
+
+### Integration Tests
+
+These tests require both the client AND the server to be running.
+After code installation:
+- Run the server: (if not already running)
+  - Go to the server directory: `cd src/server-node`
+  - Run: `npm run start`
+
+- Run the client: (if not already running)
+  - Go to the client directory: `cd src/client`
+  - Run: `npm run start` (if not already running)
+
+- Go to the client directory: `cd src/client`
+- Run: `npm run test:integration`

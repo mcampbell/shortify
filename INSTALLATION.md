@@ -6,7 +6,8 @@
 
 ## OPTIONAL
 The following steps are not required for running with `docker` or
-`docker-compose`) but will be required if you'd like to run the tests.
+`docker-compose`) but will be required if you'd like to run the tests,
+or run the app using `npm`
 
 
 Ensure that node/npm are installed.
