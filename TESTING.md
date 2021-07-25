@@ -14,7 +14,8 @@ After code installation:
 
 ### Integration
 
-These tests DO require the server be running.
+These tests DO require the server be running and test the API calls to
+the actual server.
 
 After code installation:
 - Start the server: `npm run start`
@@ -60,3 +61,14 @@ After code installation:
 
 - Go to the client directory: `cd src/client`
 - Run: `npm run test:integration`
+
+
+# Testing the deployed app
+
+If you want to run the app in "deployed" mode (docker-compose, docker,
+or npm) instead of `npm start` mode, you may the same tests as the
+client integration tests, just with a config that points it to the
+deployed port, which is different:
+
+- `cd src/client`
+- `npm run test:integration-deployed`

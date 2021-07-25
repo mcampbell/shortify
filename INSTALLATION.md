@@ -13,11 +13,10 @@ or run the app using `npm`
 Ensure that node/npm are installed.
 
 ### server
-From this directory...
-- `cd src/server-node`
+- `cd shortify/src/server-node`
 - `npm install --force`
 
 ### client
 From this directory...
-- `cd src/client`
+- `cd shortify/src/client`
 - `npm install --force`

@@ -3,7 +3,7 @@
 For your convenience I have tried to provide a number of ways to run the app.
 
 
-
+#########################################################################
 ## `docker-compose`
 These instructions were tested with `docker-compose` version 1.29.2
 
@@ -20,6 +20,7 @@ To shut down, run `docker-compose down` if in daemon/background mode, or Ctrl-c 
 
 
 
+#########################################################################
 ## `docker`
 These instructions were tested with `docker` version 20.10.7.
 
@@ -75,6 +76,7 @@ your leisure.
 
 
 
+#########################################################################
 ## `npm`
 These instructions were tested with `npm` version 7.18.1.
 

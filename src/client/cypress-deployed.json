@@ -1,0 +1,8 @@
+{
+    "testFiles": [
+        "**/*.{spec,test}.{ts,js}"
+    ],
+    "integrationFolder": "cypress/tests",
+    "baseUrl": "http://localhost:5000"
+}
+
