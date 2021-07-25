@@ -1,7 +1,7 @@
 #!/bin/bash
 
-docker stop shortify_{client,server} 2>/dev/null
-docker rm shortify_{client,server} 2>/dev/null
+docker stop shortify{-,_}{client,server} 2>/dev/null
+docker rm shortify{-,_}{client,server} 2>/dev/null
 
 ( docker images | egrep "shortify.(client|server)" | awk '{print $3}' ) | xargs -r docker rmi
 
