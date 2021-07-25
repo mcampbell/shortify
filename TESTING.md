@@ -72,10 +72,9 @@ After code installation:
 
 # Testing the deployed app
 
-If you want to run the app in "deployed" mode (docker-compose, docker,
-or npm) instead of `npm start` mode, you may the same tests as the
-client integration tests, just with a config that points it to the
-deployed port, which is different:
+If you want to run the app in "deployed" mode (docker-compose, docker, or npm) instead of
+`npm start` mode, you may run the same tests as the client integration tests, just with a
+config that points it to the deployed port, which is different:
 
 - `cd src/client`
 - `npm run test:integration-deployed`
