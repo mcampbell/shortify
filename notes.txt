@@ -3,3 +3,5 @@
 Installing the code/app: -> INSTALLATION.md
 Testing: -> TESTING.md
 Running: docker-compose, docker, or npm -> RUNNING.md
+
+Notes for the evaluator: -> docs/NOTES-FOR-EVALUATOR.md

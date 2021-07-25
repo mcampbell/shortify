@@ -4,11 +4,11 @@ General notes about my process, and things I'd like to point out.
 
 ## Overall/General/Misc
 
-I wrote all this on a Mac, but did try to also test to the extent I could on Ubuntu (18),
-and Windows (10, native npm and WSL2 flavored docker).  The versions of docker and npm are
-listed in the various other text files where appropriate.  Other than testing the app
-itself, some of the convenience scripts I wrote will only work on a unixy system.  They
-should be noted in the docs.
+I wrote all this on a Mac, but did try to also test to the extent I could on Ubuntu
+(18.04, 20.04), and Windows (10, native npm and WSL2 flavored docker).  The versions of
+docker and npm are listed in the various other text files where appropriate.  Other than
+testing the app itself, some of the convenience scripts I wrote will only work on a unixy
+system.  They should be noted in the docs.
 
 On the UI/Layout, I tried to get as close to the Stord site as I could, but I purposely
 did NOT try to use the same CSS or techniques as the site.  As such there are differences,
@@ -27,11 +27,10 @@ a 'spec' of the code.
 I tried to model the JSON return data in JSON-API format.
 
 You will find a file "Resources.md" here.  It would be dishonest to claim I knew how to do
-everything you see here right off the bat, because I didn't.  I knew enough of all the
-pieces to know where to look and what to look for, but I used online help (no outright
-code copying, unless noted in comments) to see how someone did something.  When I needed
-to do that, I tried to put the link of where I found things in this file as a "citations"
-history.
+everything you see here right off the bat.  I knew enough of all the pieces to know where
+to look and what to look for, but I used online here and there to see how someone did
+something.  When I needed to do that, I tried to put the link of where I found things in
+this file as a "citations" history.
 
 Security... I implemented a basic authentication assertion, and check, in the client and
 server respectively.  It is in no way secure, but I wanted to show (and commented some) on
@@ -51,8 +50,8 @@ Running shortify-server and client in `docker-compose` mode on my Macbook, I get
 and 3 calls per second, when running 1 "client".  With 5 clients, it goes to 17-19.  With
 10, over 46.  I was able to serve over 100 requests/s with 20 simultaneous clients.
 
-On my machine it was able to handle at least 75 clients with no errors. (producing 277
-requests/s).
+On my development machine it was able to handle at least 75 clients with no
+errors. (producing 277 requests/s).
 
 
 ## Things I Wanted To Do, but Didn't
@@ -72,7 +71,7 @@ change would be the setup and deployment.
 
 Making the site responsive to mobile sizes.  I see that the production Stord site switches
 the navbar to a hamburger below a certain size.  I'd have to investigate how this is done
-with media queries or straight css.
+with media queries.
 
 Test coverage values.  I'd have to see how to make Cypress or Jest instrument for this; I
-know it's possible. I'd love to talk about my experience with test coverage %'s.
+believe it's possible.
