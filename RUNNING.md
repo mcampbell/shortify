@@ -16,8 +16,10 @@ the database file(s).  It may be deleted, but of course any stored data will be 
 with it.  Running with plain docker (see below) will create the same mount in the same
 place in case you want to mix/match running in both ways.
 
-To shut down, run `docker-compose down` if in daemon/background mode, or Ctrl-c if in foreground.
+You may view the app at http://localhost:5000/
 
+
+To shut down, run `docker-compose down` if in daemon/background mode, or Ctrl-c if in foreground.
 
 
 
@@ -62,6 +64,9 @@ docker run -it --rm \
        shortify-client:latest
 ```
 
+You may view the app at http://localhost:5000/
+
+
 To shut down, run `docker stop shortify-client`
 
 ## Cleaning Up (unixy systems)
@@ -72,7 +77,6 @@ To clean up any docker remnants, run `./src/bin/cleanup-docker.sh`.  This will:
 
 It will *not* remove the volume mount however.  This can be safely `rm`'d with the code at
 your leisure.
-
 
 
 
@@ -94,5 +98,8 @@ To shut down, Ctrl-c.
 - open a new terminal
 - cd `src/client`
 - run `npm run start`
+
+You may view the app at http://localhost:5000/
+
 
 To shut down, Ctrl-c.
