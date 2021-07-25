@@ -8,6 +8,7 @@ For your convenience I have tried to provide a number of ways to run the app.
 These instructions were tested with `docker-compose` version 1.29.2
 
 - Install the code (see: INSTALL.md), then...
+- `cd shortify/src`
 - `docker-compose up` (optionally, add `-d` for daemon/background mode)
 
 Note that this will create a local volume mount in `./src/server-node/volumes/db` to hold

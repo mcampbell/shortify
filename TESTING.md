@@ -38,6 +38,13 @@ In the client code, all the tests are run with Cypress.  Like the server, these 
 headless/invisible tests, but you may run `npm run cypress` (or `npx cypress open`) to get
 the Cypress UI and run whichever sets of tests "manually".
 
+** NOTE ** If you run Cypress tests with `cypress open`, you may get dialogs asking you to
+OK a "copy to clipboard" action.  This happens with Chrome and Firefox, but not the
+default Electron.  I am not sure why this happens, but I suspect it's a security feature
+of the browsers when being driven via script/API, as Cypress does.  I was unable to devote
+the time to figuring it all out, or how to not make it happen.  Clicking "Ok" allows the
+tests that use clipboard copying to continue.
+
 ### Unit Tests
 
 These tests DO NOT require the *SERVER* be running.  They do require the *CLIENT* to be running.
