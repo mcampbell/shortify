@@ -1,0 +1,5 @@
+# NOTES
+
+Installing the code/app: -> INSTALLATION.md
+Testing: -> TESTING.md
+Running: docker-compose, docker, or npm -> RUNNING.md
