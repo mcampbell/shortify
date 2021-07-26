@@ -45,7 +45,7 @@ docker run -it --rm \
        shortify-server:latest
 ```
 
-Note that this will create a local volume mount in `./src/volumes/db` to hold the database
+Note that this will create a local volume mount in `./src/server-node/volumes/db` to hold the database
 file(s).  It may be deleted, but of course any stored data will be deleted with it.
 
 To shut down, run `docker stop shortify-server`
