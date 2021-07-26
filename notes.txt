@@ -6,6 +6,13 @@ The provided makefile targets were implemented for setup, server, and test.  Dep
 should be correct so you can `git clone...` the repo, then, `make test` for the entire
 suite.  This will leave the app running on `http://localhost:5000`.
 
+There are addtitional make targets should you need/want them:
+`stop`: stops the server and client docker containers
+`clean`: `stop`s, and removes the server and client docker containers and images
+`distclean` (or `dist-clean`): `clean`s, and removes the volume mount and log dirs
+
+These targets are idempotent.
+
 ## Manually
 
 If you want to install, run, or test manually, you can refer to the following instruction

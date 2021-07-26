@@ -303,3 +303,4 @@ fabric.properties
 /src/volumes/
 shortify.db
 venv/
+logs/
