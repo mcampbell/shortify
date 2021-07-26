@@ -40,7 +40,8 @@ test: server
 	cd src/server-node && npm run test:unit
 
 	@echo Running client unit tests
-	cd src/client && npm run test:unit
+	@echo These tests require the client be running on port 3000 in \"development\" mode.
+	@echo Please see the TESTING.md file for setup.
 
 # ######################################################
 # Additional targets
