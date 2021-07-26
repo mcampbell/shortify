@@ -15,6 +15,9 @@ setup:
 	cd src/client && mkdir -p logs && docker build -t shortify_client:latest . >> logs/client-docker-build.log 2>&1
 	@echo Done.  Logs are in logs/client-docker-build.log
 
+	@echo Images:
+	docker images | head -1; docker images | grep shortify_
+
 # `make server` will be used after `make setup` in order to start
 # an http server process that listens on any unreserved port
 #	of your choice (e.g. 8080).
