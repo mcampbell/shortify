@@ -7,12 +7,30 @@
 # anything else that needs to happen before your server is started
 # for the first time
 setup:
+        echo Making server docker image for RUNNING...
+        cd src/server-node
+	docker run -it --rm -d --name shortify-server -v ${PWD}/volumes/db:/app/db -p 5001:5001 shortify-server:latest
+	echo Making client docker image for RUNNING...
+	docker build -t shortify-client:latest .
 
 # `make server` will be used after `make setup` in order to start
 # an http server process that listens on any unreserved port
-#	of your choice (e.g. 8080). 
-server:
+#	of your choice (e.g. 8080).
+server: setup
+	echo Running application in docker-compose...
+	cd src
+	docker-compose up -d
 
 # `make test` will be used after `make setup` in order to run
 # your test suite.
-test:
+test: server
+	echo Installing npm packages for TESTING...
+	cd src/server-node && npm install
+	cd src/client && npm install
+
+	echo Running integration suite
+	cd src/client && npm run test:integration-deployed
+
+# `make clean` will remove any/all docker containers and images (unix only)
+clean:
+	cd src/bin && bash ./cleanup-docker.sh || true
