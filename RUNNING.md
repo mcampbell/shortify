@@ -90,6 +90,7 @@ Install the code (see INSTALL.md), then...
 ### server
 - open a new terminal
 - cd `src/server-node`
+- run `npm install` (if not done from install)
 - run `npm run start`
 
 To shut down, Ctrl-c.
@@ -97,6 +98,7 @@ To shut down, Ctrl-c.
 ### client
 - open a new terminal
 - cd `src/client`
+- run `npm install` (if not done from install)
 - run `npm run start`
 
 You may view the app at http://localhost:5000/
