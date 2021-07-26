@@ -2,7 +2,7 @@
 
 docker run -it --rm \
        -d \
-       --name shortify-server \
+       --name shortify_server \
        -v ${PWD}/volumes/db:/app/db \
        -p 5001:5001 \
-       shortify-server:latest
+       shortify_server:latest

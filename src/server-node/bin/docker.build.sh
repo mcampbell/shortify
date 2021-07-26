@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t shortify-server:latest .
+docker build -t shortify_server:latest .

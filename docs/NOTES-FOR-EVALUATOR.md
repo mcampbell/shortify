@@ -46,7 +46,7 @@ I wrote a crude python and shell load tester in `load-test`.  The README in the 
 has more detail but each python instance will just serially make requests and collect the
 response code (hoping for 302's).
 
-Running shortify-server and client in `docker-compose` mode on my Macbook, I get between 2
+Running shortify_server and client in `docker-compose` mode on my Macbook, I get between 2
 and 3 calls per second, when running 1 "client".  With 5 clients, it goes to 17-19.  With
 10, over 46.  I was able to serve over 100 requests/s with 20 simultaneous clients.
 
