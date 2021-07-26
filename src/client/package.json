@@ -23,7 +23,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test:unit": "cypress run --spec cypress/tests/unit/*.spec.js",
+        "test:unit": "cypress run --spec \"cypress/tests/unit/*.spec.js\"",
         "test:integration": "cypress run --spec cypress/tests/integration/*.spec.js",
         "test:integration-deployed": "cypress run --config-file=cypress-deployed.json",
         "cypress": "cypress open"

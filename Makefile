@@ -36,6 +36,12 @@ test: server
 	@echo Running integration suite
 	cd src/client && npm run test:integration-deployed
 
+	@echo Running server unit tests
+	cd src/server-node && npm run test:unit
+
+	@echo Running client unit tests
+	cd src/client && npm run test:unit
+
 # ######################################################
 # Additional targets
 
