@@ -2,9 +2,10 @@
 
 ## Makefile
 
-The provided makefile targets were implemented for setup, server, and test.  Dependencies
-should be correct so you can `git clone...` the repo, then, `make test` for the entire
-suite.  This will leave the app running on `http://localhost:5000`.
+The provided makefile targets were implemented for setup, server, and test in
+`shortify/Makefile`.  Dependencies should be correct so you can `git clone...` the repo,
+then, `make test` for the entire suite.  This will leave the app running on
+`http://localhost:5000`.
 
 There are addtitional make targets should you need/want them:
 `stop`: stops the server and client docker containers

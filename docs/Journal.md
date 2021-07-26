@@ -105,3 +105,7 @@ Worked on...
 ## 2021-07-24
 - Bunch of work on getting the lot deploy-able and run-able
   - docs
+
+## 2021-07-25/26
+- Tidy up docs, testing
+- wrap it all in Makefile
