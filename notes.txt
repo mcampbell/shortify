@@ -1,7 +1,21 @@
 # NOTES
 
+## Makefile
+
+The provided makefile targets were implemented for setup, server, and test.  Dependencies
+should be correct so you can `git clone...` the repo, then, `make test` for the entire
+suite.  This will leave the app running on `http://localhost:5000`.
+
+## Manually
+
+If you want to install, run, or test manually, you can refer to the following instruction
+files.
+
 Installing the code/app: -> INSTALLATION.md
 Testing: -> TESTING.md
 Running: docker-compose, docker, or npm -> RUNNING.md
 
-Notes for the evaluator: -> docs/NOTES-FOR-EVALUATOR.md
+
+## OTHER NOTES
+
+I've provided a set of points I wanted to make in `docs/NOTES-FOR-EVALUATOR.md`.
